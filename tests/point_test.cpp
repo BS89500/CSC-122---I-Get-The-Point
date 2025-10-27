@@ -23,7 +23,11 @@ TEST_CASE("!Equal") {
     Point p2 = Point(5.5, -1.2);
     REQUIRE((p1 != p2) == true);
 }
-
+TEST_CASE("[] Overload") {
+    Point p1 = Point(3.2, 9.8);
+    REQUIRE(p1['x'] == 3.2f);
+    REQUIRE(p1['y'] == 9.8f);
+}
 TEST_CASE("Zero") {
     Point p1(0, 0), p2(0, 0);
     REQUIRE(p1 == p2);

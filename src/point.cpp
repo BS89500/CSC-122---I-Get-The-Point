@@ -30,6 +30,15 @@ Point Point::operator/(Point other) {
    float ysum = y + other.y;
    return Point(xsum/2, ysum/2);
 }
+float Point::operator[](char axis) {
+   if (axis == 'x' || axis == 'X') {
+      return x;
+   } else if (axis == 'y' || axis == 'Y') {
+      return y;
+   } else {
+      throw std::invalid_argument("Invalid axis: must be 'x' or 'y'");
+   }
+}
 std::ostream& operator<<(std::ostream &os, const Point &other) {
    return os << "(" << other.x << ", " << other.y << ")" << std::endl;
 }

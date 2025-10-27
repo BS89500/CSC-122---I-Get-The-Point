@@ -11,6 +11,7 @@ class Point{
     bool operator==(Point other);
     bool operator!=(Point other);
     Point operator/(Point other);
+    float operator[](char axis);
     friend std::ostream& operator<<(std::ostream &stream, const Point &other);
 };
 
